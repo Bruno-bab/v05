@@ -8,23 +8,19 @@ namespace vsite::oop::v5
 
     class tire
     {
-    public:
+    private:
         double d;
-        tire(double x)
-        {
-            d = x;
-        }
+    public:
+        tire(double x) : d(x) {}
         double diameter();
     };
 
     class vehicle
     {
-    public:
+    private:
         int y;
-        vehicle(int x)
-        {
-            y = x;
-        }
+    public:
+        vehicle(int x) : y(x) {}
         int year();
     };
 
@@ -32,20 +28,19 @@ namespace vsite::oop::v5
 
     class product
     {
-    public:
+    private:
         double p;
-        product(double x)
-        {
-            p = x;
-        }
+    public:
+        product(double x) : p(x) {}
         double price();
     };
 
     class car : public product, public vehicle
     {
-    public:
+    private:
         tire t;
-        car(int y, double p, double d) : vehicle(y), product(p), t(d){};
+    public:
+        car(int y, double p, double d) : vehicle(y), product(p), t(d){}
         double tire_diameter();
     };
 };
